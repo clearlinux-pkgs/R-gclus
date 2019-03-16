@@ -4,12 +4,14 @@
 #
 Name     : R-gclus
 Version  : 1.3.2
-Release  : 14
+Release  : 15
 URL      : https://cran.r-project.org/src/contrib/gclus_1.3.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/gclus_1.3.2.tar.gz
 Summary  : Clustering Graphics
 Group    : Development/Tools
 License  : GPL-2.0+
+Requires: R-markdown
+BuildRequires : R-markdown
 BuildRequires : buildreq-R
 
 %description
@@ -25,10 +27,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1546903080
+export SOURCE_DATE_EPOCH=1552761479
 
 %install
-export SOURCE_DATE_EPOCH=1546903080
+export SOURCE_DATE_EPOCH=1552761479
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -64,8 +66,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library gclus|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  gclus || :
 
 
 %files
