@@ -4,7 +4,7 @@
 #
 Name     : R-gclus
 Version  : 1.3.2
-Release  : 36
+Release  : 37
 URL      : https://cran.r-project.org/src/contrib/gclus_1.3.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/gclus_1.3.2.tar.gz
 Summary  : Clustering Graphics
